@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Openlayers Test</title>
+	<script type="text/javascript" src="/static/OpenLayers.js"></script>
+	<script type="text/javascript">
+		var map;
+
+		function init() {
+			map = new OpenLayers.Map('map_element',{});
+			var wms = new OpenLayers.Layer.WMS(
+          'Openlayers WMS',
+          'http://vmap0.tiles.osgeo.org/wms/vmap0',
+          {layers : 'basic'},
+          {}
+      );
+
+      map.addLayer(wms);
+      if(!map.getCenter()) {
+          map.zoomToMaxExtent();
+      }
+		}
+	</script>
+</head>
+<body onload='init();'>
+    <div id='map_element' style='width: 500px; height: 500px;'></div>
+</body>
+</html>
