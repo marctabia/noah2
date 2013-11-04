@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Openlayers Test</title>
-	<script type="text/javascript" src="/static/OpenLayers.js"></script>
+	<script type="text/javascript" src="static/OpenLayers.js"></script>
 	<script type="text/javascript">
 		var map;
 
@@ -11,7 +11,7 @@
 			map = new OpenLayers.Map('map_element',{});
 			var wms = new OpenLayers.Layer.WMS(
           'Openlayers WMS',
-          'http://vmap0.tiles.osgeo.org/wms/vmap0',
+          'http://vmap0.tiles.osgeo.org/wms/vmap0?zoom=4&lat=56&lon=-116',
           {layers : 'basic'},
           {}
       );
